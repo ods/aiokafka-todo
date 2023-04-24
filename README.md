@@ -1,0 +1,62 @@
+## Import needed code from python-kafka
+
+### Why?
+
+It's not supported, issues and PRs (including [my one from 2021](https://github.com/dpkp/kafka-python/pull/2285)) are ignored. With it we can't provide compatibility with newer versions of Python.
+
+### How?
+
+Using tools like `git subtree add ...` it's possible to copy everything either with history or squashed. But the history will be destroyed by current merge policy (squash).
+
+### What stops us from doing it?
+
+Probably nothing, this step doesn't depend on anything else. But we have to look through issues/PRs for kafka-python and apply them to our code base.
+
+
+## Apply black autoformatting
+
+### Why?
+
+To make style consistent and simple to manage.
+
+### What stops us from doing it?
+
+* It destroys attribution of the code. It would be nice to find a solution that allows us to keep it.
+* All the existing PRs have to be rewritten. We have to either close or merge them before doing this.
+
+
+## Add type annotations
+
+### Why?
+
+Nowadays libraries are expected to be typed.
+
+### What stops us from doing it?
+
+It's better to do massive changes after autoformatting.
+
+
+## Rewrite tests with pytest
+
+### Why?
+
+We have a lot of problems in tests, they are hard to read. It's easier to fix the with `pytest`s fixtures and `pytest-asyncio`.
+
+### What stops us from doing it?
+
+It's better to do massive changes after autoformatting.
+
+
+## New kafka versions
+
+### What stops us from doing it?
+
+* The current image doesn't seem to work for kafka 3.
+* No access to Docker Hub account. Probably we can move images to GitHub?
+
+
+## Fix flaky test
+
+### What stops us from doing it?
+
+The test is flaky by nature (race), we have to come with some solution for it.
