@@ -2,7 +2,7 @@
 
 ### Why?
 
-It's not supported, issues and PRs (including [my one from 2021](https://github.com/dpkp/kafka-python/pull/2285)) are ignored. With it we can't provide compatibility with newer versions of Python.
+It's not supported, issues and PRs (including [my one from 2021](https://github.com/dpkp/kafka-python/pull/2285)) are ignored. With it we can't provide compatibility with newer versions of Python ([an example of problem](https://github.com/dpkp/kafka-python/pull/2304)).
 
 ### How?
 
@@ -60,3 +60,15 @@ It's better to do massive changes after autoformatting.
 ### What stops us from doing it?
 
 The test is flaky by nature (race), we have to come with some solution for it.
+
+
+## Replace codec dependencies
+
+### Why?
+
+Some of them are not supported, we already have problems with python-snappy in Python 3.11.
+
+
+### What?
+
+One probable candidate is [cramjam](https://github.com/milesgranger/pyrus-cramjam) could replace them all. According to [download statistics](https://pepy.tech/project/cramjam) it's much more popular, than aiokafka itself.
