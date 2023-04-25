@@ -72,3 +72,14 @@ Some of them are not supported, we already have problems with python-snappy in P
 ### What?
 
 One probable candidate is [cramjam](https://github.com/milesgranger/pyrus-cramjam) could replace them all. According to [download statistics](https://pepy.tech/project/cramjam) it's much more popular, than aiokafka itself.
+
+
+## Move from setup.py to pyproject.toml (PEP 517)
+
+### Why?
+
+Both direct invocation of setup.py and setuptools [are effectively deprecated](https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html). The modern approach is to use `pyproject.toml`
+
+### What?
+
+I personally prefer `hatch`. But we have to find out if it plays well with cython.
