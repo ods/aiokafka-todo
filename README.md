@@ -6,7 +6,7 @@ It's not supported, issues and PRs (including [my one from 2021](https://github.
 
 ### How?
 
-Using tools like `git subtree add ...` it's possible to copy everything either with history or squashed. But the history will be destroyed by current merge policy (squash).
+We can filter out needed modules with full history using [`filter-repo`](https://github.com/newren/git-filter-repo) tool. Also something similar can be done with `git subtree add ...`. But the history will be destroyed by current merge policy (squash).
 
 ### What stops us from doing it?
 
@@ -21,7 +21,7 @@ To make style consistent and simple to manage.
 
 ### What stops us from doing it?
 
-* It destroys attribution of the code. It would be nice to find a solution that allows us to keep it.
+* It spoils attribution for the code. It would be nice to find a solution that allows us to keep it. But we can mitigate this issue by providing `.git-blame-ignore-revs` file and using `git blame --ignore-revs-file` (see [docs](https://docs.github.com/en/repositories/working-with-files/using-files/viewing-a-file#ignore-commits-in-the-blame-view)). Probably we should also look through the history and add other commits to ignore, if they are not mixed up by "squash" policy.
 * All the existing PRs have to be rewritten. We have to either close or merge them before doing this.
 
 
@@ -74,7 +74,7 @@ Some of them are not supported, we already have problems with python-snappy in P
 One probable candidate is [cramjam](https://github.com/milesgranger/pyrus-cramjam) could replace them all. According to [download statistics](https://pepy.tech/project/cramjam) it's much more popular, than aiokafka itself.
 
 
-## Move from setup.py to pyproject.toml (PEP 517)
+## Move from setup.py to pyproject.toml (PEP-517)
 
 ### Why?
 
