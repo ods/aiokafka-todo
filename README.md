@@ -1,3 +1,15 @@
+## Drop support for Python 3.7
+
+### Why?
+
+We have problems with openssl in image for it and security support ends for it very soon (27 Jun 2023)
+
+## Drop support for kafka 0.x and 1.x
+
+### Why?
+
+Probably nobody develop for them now. Nobody creates new images for them. The code could be simplified.
+
 ## Import needed code from python-kafka
 
 ### Why?
