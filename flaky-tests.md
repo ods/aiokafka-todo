@@ -1,5 +1,20 @@
 <hr/>
 
+https://github.com/aio-libs/aiokafka/actions/runs/5136838735/jobs/9244123052
+
+`tests/test_consumer.py::TestConsumerIntegration::test_max_poll_interval_ms`
+
+```
+        await listener1.assignment_ready.wait()
+        await listener2.assignment_ready.wait()
+>       self.assertTrue(consumer1.assignment())
+E       AssertionError: set() is not true
+
+tests/test_consumer.py:2024: AssertionError
+```
+
+<hr/>
+
 https://github.com/aio-libs/aiokafka/actions/runs/5123049614/jobs/9213090496
 
 `tests/test_consumer.py::TestConsumerIntegration::test_check_extended_message_record` (after failed `tests/test_conn.py::ConnIntegrationTest::test_send_without_response`)
