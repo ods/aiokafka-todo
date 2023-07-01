@@ -29,3 +29,17 @@ E               RuntimeWarning: coroutine 'StreamWriter.drain' was never awaited
 ```
 
 <hr/>
+
+https://github.com/ods/aiokafka/actions/runs/5431828005/jobs/9878455324
+
+`tests/test_transactional_consumer.py::TestKafkaConsumerIntegration::test_consumer_transactional_commit`
+
+```
+        # The transaction blocked consumption
+        task = create_task(consumer.getone())
+        await asyncio.sleep(1)
+>       self.assertFalse(task.done())
+E       AssertionError: True is not false
+```
+
+<hr/>
