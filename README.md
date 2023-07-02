@@ -4,6 +4,13 @@
 
 Probably nobody develop for them now. Nobody creates new images for them. The code could be simplified.
 
+### What stops us from doing it?
+
+Before doing so it would be nice to:
+
+* Get usage statistics by version to estimate the impact.
+* Decide the way how we handle unsupported versions.
+
 ## Import needed code from python-kafka
 
 ### Why?
