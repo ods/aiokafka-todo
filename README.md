@@ -16,6 +16,8 @@ Probably nobody develop for them now. Nobody creates new images for them. The co
 
 It's not supported, issues and PRs (including [my one from 2021](https://github.com/dpkp/kafka-python/pull/2285)) are ignored. With it we can't provide compatibility with newer versions of Python ([an example of problem](https://github.com/dpkp/kafka-python/pull/2304)).
 
+[The statement from the author](https://github.com/dpkp/kafka-python/issues/2290#issuecomment-1009133967).
+
 ### How?
 
 We can filter out needed modules with full history using [`filter-repo`](https://github.com/newren/git-filter-repo) tool. Also something similar can be done with `git subtree add ...`. But the history will be destroyed by current merge policy (squash).
