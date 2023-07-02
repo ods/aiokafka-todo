@@ -1,9 +1,3 @@
-## Drop support for Python 3.7
-
-### Why?
-
-We have problems with openssl in image for it and security support ends for it very soon (27 Jun 2023)
-
 ## Drop support for kafka 0.x and 1.x
 
 ### Why?
@@ -69,11 +63,9 @@ It's better to do massive changes after autoformatting.
 * No access to Docker Hub account. Probably we can move images to GitHub?
 
 
-## Fix flaky test
+## Fix flaky tests
 
-### What stops us from doing it?
-
-The test is flaky by nature (race), we have to come with some solution for it.
+[The list of flaky tests](./flaky-tests.md).
 
 
 ## Replace codec dependencies
