@@ -93,3 +93,27 @@ E               RuntimeError: Event loop is closed
 
 /opt/hostedtoolcache/Python/3.12.0/x64/lib/python3.12/site-packages/_pytest/unraisableexception.py:78: PytestUnraisableExceptionWarning
 ```
+
+<hr/>
+
+https://github.com/ods/aiokafka/actions/runs/7572567954/job/20622809790
+
+`tests/test_consumer.py::TestConsumerIntegration::test_kip_345_disabled`
+
+```
+Expected: mock({TopicPartition(topic='topic-test_kip_345_disabled-FLbCSaVSPC', partition=0)})
+  Actual: mock({TopicPartition(topic='topic-test_kip_345_disabled-FLbCSaVSPC', partition=0), TopicPartition(topic='topic-test_kip_345_disabled-FLbCSaVSPC', partition=1)})
+
+pytest introspection follows:
+
+Args:
+assert ({TopicPartit...artition=1)},) == ({TopicPartit...artition=0)},)
+  At index 0 diff: {TopicPartition(topic='topic-test_kip_345_disabled-FLbCSaVSPC', partition=0), TopicPartition(topic='topic-test_kip_345_disabled-FLbCSaVSPC', partition=1)} != {TopicPartition(topic='topic-test_kip_345_disabled-FLbCSaVSPC', partition=0)}
+  Full diff:
+    (
+  -  {TopicPartition(topic='topic-test_kip_345_disabled-FLbCSaVSPC', partition=0)},,
+  ?                                                                              - -
+  +  {TopicPartition(topic='topic-test_kip_345_disabled-FLbCSaVSPC', partition=0),
+  +   TopicPartition(topic='topic-test_kip_345_disabled-FLbCSaVSPC', partition=1)},,
+    )
+```
