@@ -97,6 +97,7 @@ Both direct invocation of setup.py and setuptools [are effectively deprecated](h
 
 I personally prefer `hatch`. But we have to find out if it plays well with cython.
 
+
 ## Update github actions
 
 ### Why?
@@ -111,3 +112,8 @@ Node.js 12 actions are deprecated. Please update the following actions to use No
 ## Fix towncrier flow
 
 We need to update instruction and keep `CHANGES` directory.  Otherwise supporters [don't understand what to do](https://github.com/aio-libs/aiokafka/pull/912#issuecomment-1660290007).
+
+
+## Verify protocol structs, use names as in spec
+
+[Protocol specification](https://kafka.apache.org/protocol)
