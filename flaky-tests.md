@@ -100,6 +100,10 @@ https://github.com/ods/aiokafka/actions/runs/7572567954/job/20622809790
 
 `tests/test_consumer.py::TestConsumerIntegration::test_kip_345_disabled`
 
+https://github.com/aio-libs/aiokafka/actions/runs/8269331444/job/22624480929
+
+`tests/test_consumer.py::TestConsumerIntegration::test_kip_345_enabled`
+
 ```
 Expected: mock({TopicPartition(topic='topic-test_kip_345_disabled-FLbCSaVSPC', partition=0)})
   Actual: mock({TopicPartition(topic='topic-test_kip_345_disabled-FLbCSaVSPC', partition=0), TopicPartition(topic='topic-test_kip_345_disabled-FLbCSaVSPC', partition=1)})
