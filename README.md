@@ -11,34 +11,6 @@ Before doing so it would be nice to:
 * Get usage statistics by version to estimate the impact.
 * Decide the way how we handle unsupported versions.
 
-## Import needed code from python-kafka
-
-### Why?
-
-It's not supported, issues and PRs (including [my one from 2021](https://github.com/dpkp/kafka-python/pull/2285)) are ignored. With it we can't provide compatibility with newer versions of Python ([an example of problem](https://github.com/dpkp/kafka-python/pull/2304)).
-
-[The statement from the author](https://github.com/dpkp/kafka-python/issues/2290#issuecomment-1009133967).
-
-### How?
-
-We can filter out needed modules with full history using [`filter-repo`](https://github.com/newren/git-filter-repo) tool. Also something similar can be done with `git subtree add ...`. But the history will be destroyed by current merge policy (squash).
-
-### What stops us from doing it?
-
-Probably nothing, this step doesn't depend on anything else. But we have to look through issues/PRs for kafka-python and apply them to our code base.
-
-
-## Apply black autoformatting
-
-### Why?
-
-To make style consistent and simple to manage.
-
-### What stops us from doing it?
-
-* It spoils attribution for the code. It would be nice to find a solution that allows us to keep it. But we can mitigate this issue by providing `.git-blame-ignore-revs` file and using `git blame --ignore-revs-file` (see [docs](https://docs.github.com/en/repositories/working-with-files/using-files/viewing-a-file#ignore-commits-in-the-blame-view)). Probably we should also look through the history and add other commits to ignore, if they are not mixed up by "squash" policy.
-* All the existing PRs have to be rewritten. We have to either close or merge them before doing this.
-
 
 ## Add type annotations
 
@@ -105,7 +77,11 @@ I personally prefer `hatch`. But we have to find out if it plays well with cytho
 We already get warnings for them:
 
 ```
-Node.js 12 actions are deprecated. Please update the following actions to use Node.js 16: actions/checkout@v2, actions/setup-python@v2, actions/cache@v1. For more information see: https://github.blog/changelog/2022-09-22-github-actions-all-actions-will-begin-running-on-node16-instead-of-node12/.
+The following actions uses node12 which is deprecated and will be forced to run on node16: actions/checkout@v2, actions/setup-python@v2, actions/cache@v1. For more info: https://github.blog/changelog/2023-06-13-github-actions-all-actions-will-run-on-node16-instead-of-node12-by-default/
+
+Node.js 16 actions are deprecated. Please update the following actions to use Node.js 20: actions/checkout@v2, actions/setup-python@v2, actions/cache@v1. For more information see: https://github.blog/changelog/2023-09-22-github-actions-transitioning-from-node-16-to-node-20/.
+
+The `set-output` command is deprecated and will be disabled soon. Please upgrade to using Environment Files. For more information see: https://github.blog/changelog/2022-10-11-github-actions-deprecating-save-state-and-set-output-commands/
 ```
 
 
