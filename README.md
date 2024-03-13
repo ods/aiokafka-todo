@@ -93,3 +93,8 @@ We need to update instruction and keep `CHANGES` directory.  Otherwise supporter
 ## Verify protocol structs, use names as in spec
 
 [Protocol specification](https://kafka.apache.org/protocol)
+
+
+## Replace custom `WeakMethod` with standard one
+
+[weakref.WeakMethod](https://docs.python.org/3/library/weakref.html#weakref.WeakMethod)
