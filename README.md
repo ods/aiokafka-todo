@@ -95,6 +95,8 @@ We need to update instruction and keep `CHANGES` directory.  Otherwise supporter
 [Protocol specification](https://kafka.apache.org/protocol)
 
 
-## Replace custom `WeakMethod` with standard one
+## Store `errno` in `UnknownError` exception
 
-[weakref.WeakMethod](https://docs.python.org/3/library/weakref.html#weakref.WeakMethod)
+Exceptions for some error codes are missing (need update, but this will
+eventually break anyway).  We raise `UnknownError` exception in this case,
+but then it's the error code of response is lost.
