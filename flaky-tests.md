@@ -121,3 +121,13 @@ assert ({TopicPartit...artition=1)},) == ({TopicPartit...artition=0)},)
   +   TopicPartition(topic='topic-test_kip_345_disabled-FLbCSaVSPC', partition=1)},,
     )
 ```
+
+<hr/>
+
+https://github.com/aio-libs/aiokafka/actions/runs/9733268751/job/26860002493
+
+Broker startup logs:
+```
+[2024-06-30 16:12:09,841] ERROR Exiting Kafka due to fatal exception (kafka.Kafka$)
+java.lang.IllegalArgumentException: requirement failed: Each listener must have a different port, listeners: PLAINTEXT://:35127,SSL://:54847,SASL_PLAINTEXT://:46291,SASL_SSL://:35127
+```

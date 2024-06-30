@@ -100,3 +100,8 @@ We need to update instruction and keep `CHANGES` directory.  Otherwise supporter
 Exceptions for some error codes are missing (need update, but this will
 eventually break anyway).  We raise `UnknownError` exception in this case,
 but then it's the error code of response is lost.
+
+
+## Questions
+
+Do we need `leave_group_on_close` in consumer as in [`kafka-python-ng`](https://github.com/wbarnha/kafka-python-ng/pull/137/files)?
